@@ -1,0 +1,110 @@
+body {
+	
+	background: #2C2F22;
+}
+a {
+	color: #F0E39E;
+}
+a:hover, a:focus {
+	color: #F0E39E;
+}
+strong {
+	color: #A1B55D;
+}
+
+/* Global */
+#global {
+	color: #181A12;
+	background: #181A12; /* Voir -> Note 1 ci-dessous */
+}
+
+/* Navigation */
+#navigation {
+	background: #181A12;
+}
+#navigation a {
+	color: #F0E39E;
+}
+#navigation a:hover, #navigation a:focus {
+	background: #000000;
+}
+
+/* Contenu principal */
+#contenu {
+	color: #181A12;
+	background: #cbd888;
+}
+#contenu a {
+	color: #181A12;
+}
+#contenu a:hover, #contenu a:focus {
+	color: #181A12;
+}
+#contenu strong {
+	color: #181A12;
+}
+form label {
+    display: inline-block;
+    min-width: 200px;
+    margin-bottom: 10px;
+    text-align: left;
+}
+
+/* --- POSITIONNEMENT --- */
+
+/* Page */
+body {
+	padding: 30px 50px 30px 50px; /* -> 2 */
+}
+#global {
+	width: 100%; /* -> 3 */
+	overflow: hidden; /* -> 3 */
+}
+
+/* En-tête */
+#entete {
+	padding: 20px;
+}
+#entete h1 {
+	margin: 0;
+        color:#F0E39E;
+}
+#entete h1 img {
+	float: left;
+	margin: 7px 20px 10px 0;
+}
+#entete .sous-titre {
+	margin: 4px 0 15px 0;
+}
+
+/* Menu de navigation */
+#navigation {
+	width: 18%; /* -> 4 */
+	float: left;
+}
+#navigation ul {
+	margin: 0;
+	padding: 20px 10px;
+	list-style: none;
+}
+#navigation a {
+	display: block;
+	height: 1%; /* -> 5 */
+	padding: 6px 6px 6px 10px;
+	line-height: 1.5;
+	font-size: .9em;
+	text-decoration: none;
+}
+
+/* Contenu */
+#contenu {
+	margin: 0 20%; /* -> 6 */
+	padding: 10px 20px;
+}
+#contenu > :first-child {
+	margin-top: 10px;
+}
+#contenu p, #contenu li {
+	line-height: 1.5;
+}
+
