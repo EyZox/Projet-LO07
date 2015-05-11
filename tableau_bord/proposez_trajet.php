@@ -1,7 +1,5 @@
 <?php $title='proposez un trajet';
-        include '../header.php';?>
-        
-       <?php
+        include '../header.php';
        
         #$_SESSION['id_car']= "oui";
         #if(!isset($_SESSION['id_car'])) {
@@ -10,32 +8,26 @@
             
         #}
         #else {
-            
+        
+        session_start();
+        $_SESSION['nom']="Pacaud";
+        $_SESSION['prenom']="Diane";
        ?>
        
         <div id="globale">
-             <div id="entete">
-                
-		<h1>
-		 Bonjour<?php #echo $_SESSION["prenom"]; ?>, proposez un trajet !
+            
+            <div id="entete">
+                <h1>
+		 Bonjour<?php echo " ".$_SESSION["prenom"]; ?>, proposez un trajet !
 		</h1>
-                 
-		<p class="sous-titre">
-		<strong><?php #$_SESSION["prenom"]." ".$_SESSION["nom"]; ?></strong>
-               
-		</p>
-	    </div>
+            </div>
             
-              <?php require '../navigation/nav.html';?>
-            
-            <div id="contenu">
-            
-                <!--contenu ! -->
-               
-	    </div>
-     
-        </div>
+              <?php require '../navigation/nav.html';
+            echo"<div id='contenu'>";
+            include '../form/form_proposez_trajet.php';
+	    echo"</div>";
+     echo"</div>";
        
-          <?php #} ?>
-
-   <?php include '../footer.php';?>
+          #} 
+         
+     include '../footer.php';?>

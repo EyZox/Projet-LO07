@@ -1,4 +1,4 @@
-<form method="post" action="<?php echo $param['action']?>" >
+<form method="post" action="<?php echo $param['action'];?>" >
           
             <div>
                 <label for="login"> Votre login : </label>

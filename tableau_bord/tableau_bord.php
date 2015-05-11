@@ -1,6 +1,10 @@
-<?php $title='votre tableau de bord';
-        include '../header.php';?>       
+<?php 
+        require_once __DIR__.'/../security/auth_user.php';
        
+        $title='votre tableau de bord';
+        include '../header.php';
+        ?>       
+        
         <div id="globale">
              <div id="entete">
                  
