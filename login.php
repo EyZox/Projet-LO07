@@ -25,7 +25,7 @@ include ROOT.'header.php';
 		{ ?>
 			<div class="flashbag-error"><?php echo $flashbag['error'];?></div>
 		<?php }
-			include ROOT.'form/form_connexion.php';
+			include ROOT.'form/login.php';
 		?>														
 	</div>
 
