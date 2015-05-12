@@ -1,22 +1,25 @@
 <?php
-require_once __DIR__.'/../mysql_connect.php';
-session_start();
-if(!(isset($_SESSION['auth'])) /*|| $_SESSION['auth'] == "" */|| (!($_SESSION['auth']))) {
-    $auth = FALSE;
-    echo 'toto';
-    if(isset($_POST['login']) && isset($_POST['mdp'])) {
+require_once __DIR__.'/../global.php';
+require_once ROOT.'sql.php';
 
-        $query = mysqli_query($bdd, 'SELECT COUNT(*) FROM individu WHERE login="'.$_POST['login'].'" AND pass="'.$_POST['mdp'].'"');
-        $result = mysqli_fetch_array($query,MYSQLI_NUM);
-        $auth = $result[0] > 0;
-        
-    }
-    
-    if($auth) {
-       $_SESSION['auth'] = TRUE;
-    }else {
-        //Erreur authentification
-        $_SESSION['flashbag'] = 'Mauvais nom d\'utilisateur ou mauvais mot de passe';
-        header('Location:'.__DIR__.'/../inscription_connexion/form_connexion.php');
-    }
+if(!(isset($_SESSION['auth'])) || (!($_SESSION['auth']))) {
+	$auth = false;
+	if(!empty($_POST['login']) && !empty($_POST['mdp'])) {
+		$stmt = $DB->prepare('SELECT COUNT(*) FROM individu WHERE login=? AND pass=? ');
+		$stmt->execute(array($_POST['login'], $_POST['mdp']));
+		if($stmt->fetchColumn()) {
+			//Authentification réussit
+			$auth = true;
+		}else {
+			//Echec authentification (mauvais login ou pass)
+			$_SESSION['flashbag']['error'] = 'Mauvais nom d\'utilisateur ou mauvais mot de passe';
+		}
+	}
+	
+	if($auth) {
+		$_SESSION['auth'] = TRUE;
+	}else {
+		//Si pas authentifié : redirection vers page de connexion
+		header('Location: '.ROOT_URL.'login.php');
+	}	
 }

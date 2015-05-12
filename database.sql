@@ -1,4 +1,3 @@
-
 CREATE TABLE individu
 (
     id INT NOT NULL AUTO_INCREMENT,
