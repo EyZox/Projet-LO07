@@ -24,7 +24,7 @@
             
               <?php require '../navigation/nav.html';
             echo"<div id='contenu'>";
-            include '../form/form_proposez_trajet.php';
+            include '../tpl/form/form_proposez_trajet.php';
 	    echo"</div>";
      echo"</div>";
        

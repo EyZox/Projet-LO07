@@ -13,4 +13,4 @@
 	<INPUT TYPE="submit" NAME="submit" VALUE="Se connecter">
 
 </form>
-<p> Nouvel arrivant ? <a href="form_inscription.php">Inscrivez-vous</a> !</p>
+<p> Nouvel arrivant ? <a href="<?php echo ROOT_URL.'sign-up.php';?>">Inscrivez-vous</a> !</p>

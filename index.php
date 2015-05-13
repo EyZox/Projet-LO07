@@ -1,8 +1,9 @@
 <?php 
     require_once __DIR__.'/global.php';    
 	require_once ROOT.'security/auth_user.php';
-    $title='votre tableau de bord';
-    include ROOT.'header.php';
+    
+    build_full_template('empty.php', array('title' => 'Votre tableau de bord'));
+/*
 ?>       
         
         <div id="globale">
@@ -29,3 +30,5 @@
      
         </div>
    <?php include ROOT.'footer.php';?>
+*/
+    ?>
