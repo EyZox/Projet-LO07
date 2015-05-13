@@ -5,6 +5,13 @@
 * {
 	margin:0;
 }
+html {
+	height: 100%;
+}
+body {
+	min-height: 100%;
+	position:relative;
+}
 #header {
 	text-align: center;
 }
@@ -101,9 +108,6 @@ background: url(../img/bg.jpg) no-repeat center center fixed;
   -o-background-size: cover;
   background-size: cover;
 
-
-
-	
 }
 
 .flashbag .error {
@@ -127,10 +131,15 @@ background: url(../img/bg.jpg) no-repeat center center fixed;
 	text-align: center;
 }
 
-#content article form p {
-	clear:both;
-}
-
 #content article form p input {
 	float:right;
+}
+
+#content article form .avatar {
+	float:left;
+}
+
+.avatar {
+	width: 150px;
+	height: 200px;
 }
