@@ -1,8 +1,8 @@
 <?php 
     require_once __DIR__.'/global.php';    
 	require_once ROOT.'security/auth_user.php';
-    
-    build_full_template('empty.php', array('title' => 'Votre tableau de bord'));
+	
+    build_template('empty.php', array('title' => 'Votre tableau de bord'));
 /*
 ?>       
         

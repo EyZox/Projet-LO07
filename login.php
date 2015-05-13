@@ -9,6 +9,6 @@ if(empty($_SESSION['last-action']) || $_SESSION['last-action'] == ROOT_URL.'logi
 	$params['action'] = $_SESSION['last-action'];
 }
 
-build_template('form/login.php', $params);
+build_template('form/login.php', $params, FALSE);
 
 ?>
