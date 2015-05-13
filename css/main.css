@@ -12,6 +12,10 @@ body {
 	min-height: 100%;
 	position:relative;
 }
+
+img {
+	padding : 10px;
+}
 #header {
 	text-align: center;
 }
@@ -42,6 +46,44 @@ body {
 #wrapper-content-out #wrapper-content-in #content {
 	display:inline-block;
 	text-align: left;
+	width:100%;
+}
+
+#wrapper-content-out #wrapper-content-in #content article {
+	padding: 10px 5%;
+  	margin: 10px 5%;
+}
+
+#wrapper-content-out #wrapper-content-in #content article table {
+	width:100%;
+}
+
+#content article h2 {
+	text-align: center;
+}
+
+.avatar {
+	width: 150px;
+	height: 200px;
+}
+
+#edit-profil form table #td-avatar {
+	width:170px;
+	height: 220px;
+}
+
+#content form table tr td input {
+	width:100%;
+	text-align: right;
+}
+
+#content article p {
+	text-align: center;
+}
+
+#content form table tr td input[type='submit'], #content form table tr td input[type='button'] {
+	width: initial;
+	float: right;
 }
 
 #footer {
@@ -123,23 +165,4 @@ background: url(../img/bg.jpg) no-repeat center center fixed;
 
 #content article {
 	background-color: rgba(255,255,255, 0.7);
-	padding : 20px;
-	margin: 10px;
-}
-
-#content article h2 {
-	text-align: center;
-}
-
-#content article form p input {
-	float:right;
-}
-
-#content article form .avatar {
-	float:left;
-}
-
-.avatar {
-	width: 150px;
-	height: 200px;
 }
