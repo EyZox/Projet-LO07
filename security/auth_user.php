@@ -2,24 +2,23 @@
 require_once __DIR__.'/../global.php';
 require_once ROOT.'sql.php';
 
-if(!(isset($_SESSION['auth'])) || (!($_SESSION['auth']))) {
-	$auth = false;
+if(!(isset($_SESSION['UID'])) || (!($_SESSION['UID']))) {
+	$uid = false;
 	if(!empty($_POST['login']) && !empty($_POST['mdp'])) {
-		$stmt = $DB->prepare('SELECT COUNT(*) FROM individu WHERE login=? AND pass=? ');
+		$stmt = $DB->prepare('SELECT id FROM individu WHERE login=? AND pass=? ');
 		$stmt->execute(array($_POST['login'], $_POST['mdp']));
-		if($stmt->fetchColumn()) {
-			//Authentification rÈussit
-			$auth = true;
+		$uid = $stmt->fetchColumn();
+		if($uid) {
+			//Authentification r√©ussit
+			$_SESSION['UID'] = $uid;
 		}else {
 			//Echec authentification (mauvais login ou pass)
 			$_SESSION['flashbag']['error'] = 'Mauvais nom d\'utilisateur ou mauvais mot de passe';
 		}
 	}
 	
-	if($auth) {
-		$_SESSION['auth'] = TRUE;
-	}else {
-		//Si pas authentifiÈ : redirection vers page de connexion
+	if(!$uid) {
+		//Si pas authentifi√© : redirection vers page de connexion
 		header('Location: '.ROOT_URL.'login.php');
 	}	
 }
