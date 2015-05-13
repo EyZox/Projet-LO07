@@ -57,4 +57,8 @@ function build_template($content,  $params=null) {
 	</div>
 	<?php include ROOT.'tpl/footer.php';
 }
+
+function isAuth() {
+	return isset($_SESSION['UID']) && $_SESSION['UID'];
+}
 ?>
