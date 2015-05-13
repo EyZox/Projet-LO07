@@ -116,3 +116,21 @@ background: url(../img/bg.jpg) no-repeat center center fixed;
 	font-weight: bold;
 	text-decoration: underline;
 }
+
+#content article {
+	background-color: rgba(255,255,255, 0.7);
+	padding : 20px;
+	margin: 10px;
+}
+
+#content article h2 {
+	text-align: center;
+}
+
+#content article form p {
+	clear:both;
+}
+
+#content article form p input {
+	float:right;
+}
