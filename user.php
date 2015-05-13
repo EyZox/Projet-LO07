@@ -1,5 +1,6 @@
 <?php
 require_once __DIR__.'/global.php';
+require_once __DIR__.'/sql.php';
 
 
 function getUser($id = null) {
@@ -12,9 +13,9 @@ function getUser($id = null) {
 		}
 	}
 	
-	$stmt = $DB->prepare('SELECT * FROM individu WHERE id=? ');
+	$stmt = $DB->prepare('SELECT * FROM individu WHERE id=?');
 	$stmt->execute(array($id));
-	$user = $stmt->fetch();
+	$user = $stmt->fetch(PDO::FETCH_ASSOC);
 	if($user) {
 		$user['pass'] = '';
 		return $user;
