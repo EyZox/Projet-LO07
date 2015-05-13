@@ -1,7 +1,7 @@
 <nav id="nav">
 
 	<ul>
-		<li><a href="#profil"><?php echo $params['user']['nom'] . ' ' . $params['user']['prenom'];?></a></li>
+		<li><a href="#profil" class="profil"><?php echo $params['user']['nom'] . ' ' . $params['user']['prenom'];?></a></li>
 		<li><a href="<?php echo ROOT_URL.'index.php';?>">Votre tableau de bord</a></li>
 		<li><a href="avis.php">Vos avis</a></li>
 		<li><a href="recherchez_trajet.php">Recherchez un trajet</a></li>

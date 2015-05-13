@@ -56,6 +56,7 @@
 	
 	#nav ul li:HOVER {
 		background-color: rgba(255,255,255,0.2);
+		border-radius: 15px 50px;
 	}
 	
 	#nav ul {
@@ -71,6 +72,13 @@
 		text-decoration: none;
 		color: #FFFFFF;
 		font-weight: bold;
+	}
+	
+	#nav ul li .profil {
+		background-color : #a6e708;
+		text-decoration: underline;
+		border-radius: 15px 50px;
+		color: #000000;
 	}
 	
 /*header*/
