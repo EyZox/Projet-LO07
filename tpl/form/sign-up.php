@@ -1,6 +1,6 @@
 <article>
 	<form method="post"
-		action="<?php echo ROOT_URL.'security/sign-up.php';?>"
+		action="<?php echo ROOT_URL.'action/sign-up.php';?>"
 		onsubmit="return change_pass(this);">
 
 		<table>
