@@ -8,7 +8,7 @@
 			</tr>
 			<tr>
 				<td><label for="mdp"> Votre mot de passe : </label></td>
-				<td> <input type="password" name="mdp" /></td>
+				<td> <input type="password" name="pass" /></td>
 			</tr>
 			<tr>
 				<td colspan="2"><INPUT TYPE="submit" NAME="submit" VALUE="Se connecter"></td>

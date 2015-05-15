@@ -11,10 +11,11 @@
 					<script type="text/javascript">
 					<!--
 					function change_pass($form) {
-						if($form['pass'].value != $form['pass-cfrm'].value) {
+						var pass-cfrm = $form['pass-cfrm'].value;
+						$form['pass-cfrm'].value = '';
+						if($form['pass'].value != pass-cfrm) {
 							alert('Les mots de passe ne sont pas identiques');
 							$form['pass'].value = '';
-							$form['pass-cfrm'].value = '';
 							return false;
 						}else {
 							return true;

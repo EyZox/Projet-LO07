@@ -10,7 +10,7 @@
 	<label for="avatar-url">URL :</label> <input type="url"
 		name="avatar-url" value="<?php if(isset($params['user']['photo'])) echo $params['user']['photo'];?>" />
 </div>
-<div id="avatar-file" style="display: none;">
+<div id="avatar-file">
 	<input type="file" name="avatar-file" />
 </div>
 <script type="text/javascript">
@@ -21,5 +21,6 @@
 				document.getElementById('avatar-'+radios[i].value).style.display = (radios[i].checked?"":"none");
 			}
 		}
+		avatar_display();
 //-->
 </script>

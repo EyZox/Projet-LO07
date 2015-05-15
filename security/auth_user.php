@@ -4,9 +4,9 @@ require_once ROOT.'sql.php';
 
 if(!isAuth()) {
 	$uid = false;
-	if(!empty($_POST['login']) && !empty($_POST['mdp'])) {
+	if(!empty($_POST['login']) && !empty($_POST['pass'])) {
 		$stmt = $DB->prepare('SELECT id FROM individu WHERE login=? AND pass=? ');
-		$stmt->execute(array($_POST['login'], $_POST['mdp']));
+		$stmt->execute(array($_POST['login'], $_POST['pass']));
 		$uid = $stmt->fetchColumn();
 		if($uid) {
 			//Authentification réussit

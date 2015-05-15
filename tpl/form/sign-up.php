@@ -1,5 +1,5 @@
 <article>
-	<form method="post"
+	<form method="post" enctype="multipart/form-data"
 		action="<?php echo ROOT_URL.'action/sign-up.php';?>"
 		onsubmit="return change_pass(this);">
 
