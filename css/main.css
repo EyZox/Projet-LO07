@@ -81,8 +81,15 @@ img {
 	text-align: center;
 }
 
-#content form table tr td input[type='submit'], #content form table tr td input[type='button'] {
+#content form table tr td input[type='submit'], #content form table tr td input[type='button'], #content form table tr td input[type='radio'] {
 	width: initial;
+}
+
+#content form #avatar-url input[type='url'] {
+	width: 80%;
+}
+
+#content form table tr td input[type='submit'], #content form table tr td input[type='button'] {
 	float: right;
 }
 

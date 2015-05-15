@@ -1,6 +1,6 @@
 <article id="edit-profil">
 	<h2>Modifier mes informations personnelles</h2>
-	<form action="<?php echo ROOT_URL.'action/edit-user.php';?>" name="edit-user" method="POST">
+	<form action="<?php echo ROOT_URL.'action/edit-user.php';?>" id="edit-user" method="POST" enctype="multipart/form-data">
 		<table>
 			<tr>
 				<td id="td-avatar"><img src="<?php echo $params['user']['photo'];?>" alt="avatar" class="avatar"/></td>
@@ -16,10 +16,9 @@
 						</tr>
 						<tr>
 							<td><label for="avatar">Avatar :</label></td>
-							<td><input name="avatar" value="<?php echo $params['user']['photo'];?>" type="text"/></td>
-						</tr>
-						<tr>
-							<td colspan="2"><input name="upload" value="Ou depuis votre ordinateur" type="button"/></td>
+							<td>
+								<?php include ROOT.'tpl/form/avatar.php';?>
+							</td>
 						</tr>
 						<tr>
 							<td colspan="2"><input type="submit" value="Editer"></td>
