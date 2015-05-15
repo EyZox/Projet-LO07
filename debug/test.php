@@ -3,15 +3,6 @@ require_once '../utils/global.php';
 ?>
 <pre>
 <?php
-$session['flashbag']['error'][] = 'message erreur 1';
-$session['flashbag']['error'][] = 'message erreur 2';
-$session['flashbag']['error'][] = 'message erreur 3';
-$session['flashbag']['success'][] = 'message success 1';
-$session['flashbag']['success'][] = 'message success 2';
-foreach ($session['flashbag'] as $level => $array ) {
-	foreach ($array as $message ) {
-	echo "level=$level message=$message<br>";
-	}
-}
+echo date('Y-m-d H:i:s');
 ?>
 </pre>
