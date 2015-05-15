@@ -7,6 +7,14 @@
 				<td>
 					<table>
 						<tr>
+							<td>Login :</td>
+							<td><?php echo $params['user']['login'];?></td>
+						</tr>
+						<tr>
+							<td>Solde :</td>
+							<td><?php echo $params['user']['solde'];?> €</td>
+						</tr>
+						<tr>
 							<td><label for="nom">Nom :</label></td>
 							<td><input name="nom" value="<?php echo $params['user']['nom'];?>" type="text"/></td>
 						</tr>
