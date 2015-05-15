@@ -62,6 +62,25 @@ function getUser($id = null) {
 	}
 }
 
+function getVehicule($id=null) {
+	global $DB;
+	require_once ROOT.'sql.php';
+	
+	
+	if($id == null) {
+		if(isAuth()) {
+			$id = $_SESSION['UID'];
+		}else {
+			return array();
+		}
+	}
+	
+	$stmt = $DB->prepare('SELECT * FROM vehicule WHERE conducteur=?');
+	$stmt->execute(array($id));
+	return $stmt->fetch(PDO::FETCH_ASSOC);
+	
+}
+
 function validateAvatar(&$bdd_param) {
 	if (! empty ( $_POST ['avatar-input'] )) {
 		if ($_POST ['avatar-input'] == 'file' && ! empty ( $_FILES ['avatar-file'] )) {
