@@ -17,7 +17,12 @@ function build_template($content,  $params=null, $nav=TRUE) {
 		<div id="wrapper-content-out">
 			<div id="wrapper-content-in">
 				<section id="content">
-					<?php include ROOT.'tpl/'.$content;?>
+					<?php 
+						if(!is_array($content)) $content = array($content);
+						foreach ($content as $tpl) {
+							include ROOT.'tpl/'.$tpl;
+						}
+					?>
 				</section>
 			</div>
 		</div>
