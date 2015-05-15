@@ -24,8 +24,10 @@ if(!empty($_POST['plaque']) && !empty($_POST['marque']) && !empty($_POST['modele
 	$sucess = $stmt->execute();
 }
 
-if(!$sucess) {
-	$_SESSION['flashbag']['error'] = 'Impossible d\'enregistrer votre véhicule, veuillez vérifier tout les champs du formulaire';
+if($sucess) {
+	alert('success', 'Vos informations ont bien été enregistrées');
+}else {
+	alert('error','Impossible d\'enregistrer votre véhicule, veuillez vérifier vos données');
 }
 
 header('Location: '.ROOT_URL.'vehicule.php');

@@ -11,10 +11,6 @@ $_SESSION['current-action'] = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
 
 //$_SESSION['last-request'] = date();
 
-$flashbag;
-if(isset($_SESSION['flashbag'])) {
-	$flashbag = $_SESSION['flashbag'];
-	unset($_SESSION['flashbag']);
-}
+require_once ROOT.'utils/flashbag.php';
 
 ?>

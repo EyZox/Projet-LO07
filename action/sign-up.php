@@ -35,10 +35,11 @@ if(!isAuth()) {
 }
 if(isAuth()) {
 	//Inscription réussit ou utilisateur déjà connecté
+	alert('success', 'Inscription validée');
 	header('Location: '.ROOT_URL.'index.php');
 }else {
 	/*Echec de l'inscription*/
-	$_SESSION['flashbag']['error'] = 'Erreur lors de l\'inscription, veuillez vérifier vos données';
+	alert('error','Erreur lors de l\'inscription, veuillez vérifier vos données');
 	header('Location: '.ROOT_URL.'sign-up.php');
 }
 

@@ -4,8 +4,10 @@
 	<?php if(isset($flashbag)) { ?>
 	<aside class="flashbag">
 		<?php 
-		foreach ($flashbag as $key => $value) {
-			echo '<p class="'.$key.'">'.$value.'</p>';
+		foreach ($flashbag as $level => $array) {
+			foreach ($array as $message) {
+				echo '<p class="flashbag-'.$level.'">'.$message.'</p>';
+			}
 		}
 		?>
 	</aside>

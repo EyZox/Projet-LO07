@@ -149,7 +149,11 @@ img {
 		border-style : dotted;
 		border-radius: 15px 15px 15px 15px;
 	}
-	
+
+#content article {
+	background-color: rgba(255,255,255, 0.7);
+}
+
 body {
 background: url(../img/bg.jpg) no-repeat center center fixed; 
   -webkit-background-size: cover;
@@ -159,17 +163,29 @@ background: url(../img/bg.jpg) no-repeat center center fixed;
 
 }
 
-.flashbag .error {
+
+/*FLASHBAG*/
+.flashbag p {
 	border-style: solid;
-	border-color: #880000;
 	border-width: 2px;
-	background-color: #FF5555;
 	padding : 10px 5px 10px 5px;
 	border-radius: 15px 15px 15px 15px;
 	font-weight: bold;
 	text-decoration: underline;
 }
 
-#content article {
-	background-color: rgba(255,255,255, 0.7);
+.flashbag .flashbag-error {
+	border-color: #880000;
+	background-color: #FF5555;
 }
+
+.flashbag .flashbag-success {
+	border-color: #8AC007;
+	background-color: #E2FCA3;
+}
+
+.flashbag .flashbag-info {
+	border-color: #858500;
+	background-color: #ffff99;
+}
+

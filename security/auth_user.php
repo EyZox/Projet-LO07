@@ -13,7 +13,7 @@ if(!isAuth()) {
 			$_SESSION['UID'] = $uid;
 		}else {
 			//Echec authentification (mauvais login ou pass)
-			$_SESSION['flashbag']['error'] = 'Mauvais nom d\'utilisateur ou mauvais mot de passe';
+			alert('error','Mauvais nom d\'utilisateur ou mauvais mot de passe');
 		}
 	}
 	
