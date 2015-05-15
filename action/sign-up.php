@@ -1,6 +1,6 @@
 <?php
-require_once __DIR__ . '/../global.php';
-require_once ROOT . 'sql.php';
+require_once __DIR__ . '/../utils/global.php';
+require_once ROOT . 'utils/sql.php';
 
 if(!isAuth()) {
 	if (! empty ( $_POST ['nom'] ) && ! empty ( $_POST ['prenom'] ) && ! empty ( $_POST ['datenaiss'] ) && ! empty ( $_POST ['login'] ) && ! empty ( $_POST ['pass'] )) {

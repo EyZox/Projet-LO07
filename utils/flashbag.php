@@ -1,5 +1,5 @@
 <?php
-require_once __DIR__.'/../global.php';
+require_once __DIR__.'/../utils/global.php';
 
 function alert($level, $message) {
 	$_SESSION['flashbag'][$level][] = $message;

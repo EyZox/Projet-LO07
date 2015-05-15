@@ -1,9 +1,9 @@
 <?php
 
-define('ROOT', __DIR__.'/');
+define('ROOT', __DIR__.'/../');
 define('ROOT_URL', "http://$_SERVER[HTTP_HOST]/Projet-LO07/");
 
-require_once ROOT.'functions.php';
+require_once ROOT.'utils/functions.php';
 
 session_start();
 if(isset($_SESSION['current-action']))  $_SESSION['last-action'] =  $_SESSION['current-action'];

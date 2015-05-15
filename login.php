@@ -1,5 +1,5 @@
 <?php
-require_once __DIR__.'/global.php';
+require_once __DIR__.'/utils/global.php';
 
 
 $params =  array('title' => 'Connexion');

@@ -37,7 +37,7 @@ function isAuth() {
 
 function getUser($id = null) {
 	global $DB;
-	require_once ROOT.'sql.php';
+	require_once ROOT.'utils/sql.php';
 	
 	
 	if($id == null) {
@@ -64,7 +64,7 @@ function getUser($id = null) {
 
 function getVehicule($id=null) {
 	global $DB;
-	require_once ROOT.'sql.php';
+	require_once ROOT.'utils/sql.php';
 	
 	
 	if($id == null) {

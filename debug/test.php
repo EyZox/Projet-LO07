@@ -1,5 +1,5 @@
 <?php
-require_once '../global.php';
+require_once '../utils/global.php';
 ?>
 <pre>
 <?php
