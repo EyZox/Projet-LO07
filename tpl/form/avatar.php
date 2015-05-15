@@ -4,11 +4,11 @@
 		onchange="avatar_display();" checked="checked" /> <label
 		for="avatar-input">URL</label> <input type="radio" value="file"
 		name="avatar-input" onchange="avatar_display();" /> <label
-		for="avatar-input">Fichier</label>
+		for="avatar-input">Fichier (Max : 2Mo)</label>
 </div>
 <div id="avatar-url">
 	<label for="avatar-url">URL :</label> <input type="url"
-		name="avatar-url" value="<?php echo $params['user']['photo'];?>" />
+		name="avatar-url" value="<?php if(isset($params['user']['photo'])) echo $params['user']['photo'];?>" />
 </div>
 <div id="avatar-file" style="display: none;">
 	<input type="file" name="avatar-file" />

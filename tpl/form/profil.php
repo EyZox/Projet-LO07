@@ -11,7 +11,7 @@
 							<td><input name="nom" value="<?php echo $params['user']['nom'];?>" type="text"/></td>
 						</tr>
 						<tr>
-							<td><label for="prenom">Prenom :</label></td>
+							<td><label for="prenom">Prénom :</label></td>
 							<td><input name="prenom" value="<?php echo $params['user']['prenom'];?>" type="text"/></td>
 						</tr>
 						<tr>
