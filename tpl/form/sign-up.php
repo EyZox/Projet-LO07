@@ -25,8 +25,7 @@
 			</tr>
 			<tr>
 				<td><label for="datenaiss"> Votre date de naissance :</label></td>
-				<td><input type="date" name="datenaiss" value="AAAA-MM-JJ"
-					maxlength="10" /></td>
+				<td><input type="text" id="datenaiss" name="datenaiss" value="1970-01-01" /></td>
 			</tr>
 			<tr>
 				<td><label for="avatar">Avatar :</label></td>
@@ -38,6 +37,16 @@
 				<td colspan="2"><input type="submit" value="S'inscrire"></td>
 			</tr>
 		</table>
-
 	</form>
+		<script type="text/javascript">
+	<!--
+	jQuery('#datenaiss').datetimepicker({
+		 lang:'fr',
+		 timepicker:false,
+		 mask:true,
+		 maxDate:0,
+		 format:'Y-m-d'
+		});
+	//-->
+	</script>
 </article>

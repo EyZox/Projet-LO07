@@ -11,7 +11,7 @@
 			</tr>
 			<tr>
 				<td><label for="date">Quand partez-vous ?</label></td>
-				<td><input type="datetime" value="<?php echo date('Y-m-d H:i:s');?>"/></td>
+				<td><input type="text" id="datetime" value="<?php echo date('Y-m-d H:i');?>"/></td>
 			</tr>
 			<tr>
 				<td><label for="place">Nombre de place disponible :</label></td>
@@ -23,4 +23,15 @@
 			</tr> 
 		</table>
 	</form>
+	<script type="text/javascript">
+	<!--
+	jQuery('#datetime').datetimepicker({
+		 lang:'fr',
+		 timepicker:true,
+		 mask:true,
+		 minDate:0,
+		 format:'Y-m-d H:i'
+		});
+	//-->
+	</script>
 </article>
