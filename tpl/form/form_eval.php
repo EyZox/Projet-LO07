@@ -11,4 +11,7 @@
         
         <textarea name="avis">Laissez un commentaire</textarea>
     </p>
+    <p>
+        <input type="submit" value="Valider"/>
+    </p>
 </form>

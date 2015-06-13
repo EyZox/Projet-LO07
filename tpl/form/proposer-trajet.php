@@ -21,6 +21,9 @@
 				<td><label for="prix">Quel prix demandez-vous ? (€)</label></td>
 				<td><input type="number" name="prix" min="0"/></td>
 			</tr> 
+                        <tr>
+				<td colspan="2"><input type="submit" value="Valider"/></td>
+			</tr> 
 		</table>
 	</form>
 	<script type="text/javascript">
