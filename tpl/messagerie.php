@@ -3,7 +3,7 @@
 		<tr><th>Date</th><th>De</th><th>Objet</th></tr>
 		<?php
 		foreach ($params['messages'] as $message) {
-			echo '<tr><td>'.$message['date'].'</td><td>'.$message['expediteur'].'</td><td><a href="'.ROOT_URL.'read-msg?id='.$message['id'].'">'.'TOPIC'.'</a></td></tr>';
+			echo '<tr><td>'.$message['date'].'</td><td>'.$message['expediteur'].'</td><td><a href="'.ROOT_URL.'read-msg?id='.$message['id'].'">'.$message['titre'].'</a></td></tr>';
 		}
 		?>
 	</table>
