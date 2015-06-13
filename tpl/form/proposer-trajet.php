@@ -11,7 +11,7 @@
 			</tr>
 			<tr>
 				<td><label for="date">Quand partez-vous ?</label></td>
-				<td><input type="text" id="datetime" value="<?php echo date('Y-m-d H:i');?>"/></td>
+				<td><input type="text" id="datetime" name="date" value="<?php echo date('Y-m-d H:i');?>"/></td>
 			</tr>
 			<tr>
 				<td><label for="place">Nombre de place disponible :</label></td>
