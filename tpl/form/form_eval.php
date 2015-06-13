@@ -7,6 +7,8 @@
         <option value="5">Extraordinaire</option>
     </select>
     <p>
-        <textarea>Laissez un commentaire</textarea>
+        <input type="hidden" name="target" value="<?php echo $params['id']; ?>"/>
+        
+        <textarea name="avis">Laissez un commentaire</textarea>
     </p>
 </form>

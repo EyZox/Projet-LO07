@@ -3,7 +3,10 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/wamp/www/Projet-LO07/index.php</file>
+            <file>file:/C:/wamp/www/Projet-LO07/action/edit-user.php</file>
+            <file>file:/C:/wamp/www/Projet-LO07/tpl/form/vehicule.php</file>
+            <file>file:/C:/wamp/www/Projet-LO07/action/add-solde.php</file>
+            <file>file:/C:/wamp/www/Projet-LO07/tpl/form/proposer-trajet.php</file>
         </group>
     </open-files>
 </project-private>

@@ -7,8 +7,8 @@ $success = false;
 if (! empty ( $_POST ['nom'] ) && ! empty ( $_POST ['prenom'] )) {
 	$bdd_param;
 	if(validateAvatar($bdd_param)) {
-		$stmt = $DB->prepare ( 'UPDATE individu SET nom=? , prenom=?, photo=? WHERE id=?' );
-		$success =$stmt->execute (array ($_POST ['nom'],$_POST ['prenom'],$bdd_param,$_SESSION ['UID']));
+            $stmt = $DB->prepare ( 'UPDATE individu SET nom=? , prenom=?, photo=? WHERE id=?' );
+            $success =$stmt->execute (array ($_POST ['nom'],$_POST ['prenom'],$bdd_param,$_SESSION ['UID']));
 	}
 }
 
