@@ -1,6 +1,6 @@
 <div style="padding-bottom:2em;"></div>
 <footer id="footer">
-	<p>Le contenu de mon pied de page.  Mise en page &copy; 2008</p>
+	<p><a href="<?php echo ROOT_URL.'admin';?>">Accès administrateur</a> &copy; 2015</p>
 </footer>
 </body>
 </html>

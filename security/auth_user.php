@@ -2,7 +2,7 @@
 require_once __DIR__.'/../utils/global.php';
 require_once ROOT.'utils/sql.php';
 
-if(!isAuth()) {
+if(!isAuth() && (empty($_SESSION['ADMIN']) || $_SESSION['ADMIN'] != TRUE)) {
 	$uid = false;
 	if(!empty($_POST['login']) && !empty($_POST['pass'])) {
 		$stmt = $DB->prepare('SELECT id, nom, prenom FROM individu WHERE login=? AND pass=? ');

@@ -9,17 +9,16 @@ define('MSG_PER_PAGE', 10);
 $params =  array('title' => 'Messagerie');
 
 /* Pagination */
-if(empty($_GET['page']) || !is_int($_GET['page'])) {
+if(empty($_GET['page']) || !is_numeric($_GET['page'])) {
 	$params['msg_page']=1;
 }else {
 	$params['msg_page'] = $_GET['page'];
 }
 
 /*Liste des messages*/
-$stmt = $DB->prepare ('SELECT id, expediteur, date, titre FROM message WHERE destinataire='.$_SESSION['UID'].' ORDER BY date DESC LIMIT '.MSG_PER_PAGE.' OFFSET ?;');
-if($stmt->execute(array(($params['msg_page']-1)*MSG_PER_PAGE))) {
+$stmt = $DB->prepare ('SELECT id, expediteur, date, titre FROM message WHERE destinataire='.$_SESSION['UID'].' ORDER BY date DESC LIMIT '.MSG_PER_PAGE.' OFFSET '.($params['msg_page']-1)*MSG_PER_PAGE);
+if($stmt->execute()) {
 	$params['messages'] = $stmt->fetchAll(PDO::FETCH_ASSOC);
-	
 	$cache = array();
 	foreach ($params['messages'] as $message) {
 		/*Met le nom/prenom de l'emeteur a la place de son ID*/
@@ -36,8 +35,6 @@ if($stmt->execute(array(($params['msg_page']-1)*MSG_PER_PAGE))) {
 	}
 	
 	
-}else {
-	$params['messages'] = array();
 }
 
 build_template('messagerie.php', $params);
