@@ -5,16 +5,10 @@ require_once ROOT . 'utils/sql.php';
 
 define('MSG_NO_DEST', 'Veuillez préciser un destinataire');
 define('MSG_NO_CONTENT', 'Votre message est vide');
-define('MSG_SUCCESS', 'Message envoyé');
-define('MSG_ERROR', 'Erreur lors de l\'envoie du message');
+
 
 if(!empty($_POST['to']) && !empty($_POST['msg'])) {
-	$stmt = $DB->prepare ('INSERT INTO message (expediteur, destinataire, content, titre) VALUES (?,?,?,?);');
-	if($stmt->execute(array($_SESSION['UID'], $_POST['to'], htmlspecialchars($_POST['msg'])), htmlspecialchars($_POST['titre']))) {
-		alert('success', MSG_SUCCESS);
-	}else {
-		alert('error', MSG_ERROR);
-	}
+	sendMessage($_SESSION['UID'], $_POST['to'], htmlspecialchars($_POST['msg']), empty($_POST['titre'])?NULL:htmlspecialchars($_POST['titre']));
 }elseif(empty($_POST['to'])) {
 	alert('error', MSG_NO_DEST);
 }else {
@@ -22,5 +16,4 @@ if(!empty($_POST['to']) && !empty($_POST['msg'])) {
 }
 
 header('Location: '.ROOT_URL);
-
 ?>

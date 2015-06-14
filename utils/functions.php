@@ -102,4 +102,23 @@ function validateAvatar(&$bdd_param) {
 	}
 	return false;
 }
+
+function sendMessage($from, $to, $content, $title=null, $alert = TRUE) {
+	global $DB;
+	require_once ROOT.'utils/sql.php';
+	
+	define('MSG_SUCCESS', 'Message envoyé');
+	define('MSG_ERROR', 'Erreur lors de l\'envoie du message');
+
+	$stmt = $DB->prepare ('INSERT INTO message (expediteur, destinataire, content, titre) VALUES (?,?,?,?);');
+	$res = $stmt->execute(array($from, $to, $content, $title));
+
+	if($alert) {
+		if($res) {
+			alert('success', MSG_SUCCESS);
+		}else {
+			alert('error', MSG_ERROR);
+		}
+	}
+}
 ?>
