@@ -28,8 +28,11 @@
 			if(!$params['trajet']['effectue'] && $params['trajet']['place'] > 0 && new DateTime($params['trajet']['depart']) < new DateTime()) {
 				echo '<p><a href="'.ROOT_URL.'action/reserver.php?id='.$params['trajet']['id'].'">Reserver sa place</a></p>';
 			}
-		}else if(!$params['trajet']['effectue']){?>
-			<p><a href="<?php echo ROOT_URL.'action/trajet-effectue.php?id='.$params['trajet']['id'];?>">Trajet effectué</a><p>
+		}else if(!$params['trajet']['effectue']){
+			if(new DateTime($params['trajet']['depart']) < new DateTime()) {
+				?><p><a href="<?php echo ROOT_URL.'action/trajet-effectue.php?id='.$params['trajet']['id'];?>">Trajet effectué</a><p><?php 
+			}?>
+			
 			<p><a href="<?php echo ROOT_URL.'action/annuler-trajet.php?id='.$params['trajet']['id'];?>">Annuler le trajet</a><p>
 			<?php 
 		}

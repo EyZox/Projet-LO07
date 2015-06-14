@@ -5,7 +5,7 @@
 			<?php
 				$i = 0; 
 				while(($trajet = $params['trajets']->fetch(PDO::FETCH_ASSOC))) {
-				echo "<tr><td>$trajet[depart]</td><td>$trajet[ville_d]</td><td>$trajet[ville_a]</td><td>".'<a href="'.ROOT_URL.'annonce.php?id='.$trajet['id'].'">Voir l\'annonce</a></td></tr>';
+				echo "<tr".($trajet['effectue']?' class="effectue"':'')."><td>$trajet[depart]</td><td>$trajet[ville_d]</td><td>$trajet[ville_a]</td><td>".'<a href="'.ROOT_URL.'annonce.php?id='.$trajet['id'].'">Voir l\'annonce</a></td></tr>';
 				$i++;
 				}
 				
