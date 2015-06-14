@@ -5,12 +5,14 @@ require_once ROOT.'utils/sql.php';
 if(!isAuth()) {
 	$uid = false;
 	if(!empty($_POST['login']) && !empty($_POST['pass'])) {
-		$stmt = $DB->prepare('SELECT id FROM individu WHERE login=? AND pass=? ');
+		$stmt = $DB->prepare('SELECT id, nom, prenom FROM individu WHERE login=? AND pass=? ');
 		$stmt->execute(array($_POST['login'], $_POST['pass']));
-		$uid = $stmt->fetchColumn();
-		if($uid) {
+		$res = $stmt->fetch(PDO::FETCH_ASSOC);
+		if($res) {
 			//Authentification réussit
-			$_SESSION['UID'] = $uid;
+			$_SESSION['UID'] = $res['id'];
+			$_SESSION['nom'] = $res['nom'];
+			$_SESSION['prenom'] = $res['prenom'];
 		}else {
 			//Echec authentification (mauvais login ou pass)
 			alert('error','Mauvais nom d\'utilisateur ou mauvais mot de passe');

@@ -189,3 +189,7 @@ background: url(../img/bg.jpg) no-repeat center center fixed;
 	background-color: #ffff99;
 }
 
+.avatar-min {
+	width:50px;
+	height:50px;
+}

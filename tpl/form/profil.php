@@ -15,6 +15,10 @@
 							<td><?php echo $params['user']['solde'];?> €</td>
 						</tr>
 						<tr>
+							<td>Note :</td>
+							<td><?php echo empty($params['user']['note'])?'Pas encore reçu de notes':($params['user']['note'].'/5');?></td>
+						</tr>
+						<tr>
 							<td><label for="nom">Nom :</label></td>
 							<td><input name="nom" value="<?php echo $params['user']['nom'];?>" type="text"/></td>
 						</tr>

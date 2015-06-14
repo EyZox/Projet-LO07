@@ -49,8 +49,8 @@ if(empty($_POST['prix']) || !is_numeric($_POST['prix'])) {
 }
 	
 if(!$error) {
-	$stmt = $DB->prepare('INSERT INTO trajet (depart, ville_a, ville_d, place, conducteur) VALUES (?,?,?,?,?)');
-	if($stmt->execute(array($date->format('Y-m-d H:i').':00', htmlspecialchars($_POST['ville_a']), htmlspecialchars($_POST['ville_d']), $_POST['place'], $_SESSION['UID']))) {
+	$stmt = $DB->prepare('INSERT INTO trajet (depart, ville_a, ville_d, place, prix, conducteur) VALUES (?,?,?,?,?,?)');
+	if($stmt->execute(array($date->format('Y-m-d H:i').':00', htmlspecialchars($_POST['ville_a']), htmlspecialchars($_POST['ville_d']), $_POST['place'], $_POST['prix'], $_SESSION['UID']))) {
 		alert('success', 'Votre trajet a été publié avec succés');
 	}else {
 		$error = true;

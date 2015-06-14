@@ -6,9 +6,6 @@ function build_template($content,  $params=null, $nav=TRUE) {
 		$params['title'] = 'Projet-LO07';
 	}
 
-	if(empty($params['user'])) {
-		$params['user'] = getUser();
-	}
 	include ROOT.'tpl/head.php';
 	include ROOT.'tpl/header.php';
 	?>
