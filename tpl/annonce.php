@@ -15,7 +15,12 @@
 		
 		<?php $pssgrs = '';
 		
+		$deja_inscrit = false;
+		
 		while($passager = $params['passagers']->fetch(PDO::FETCH_ASSOC)) {
+			if($passager['id'] == $_SESSION['UID']) {
+				$deja_inscrit = true;
+			}
 			$pssgrs .= '<li><img src="'.$passager['photo'].'" alt="avatar-min" class="avatar-min"/> <a href="'.ROOT_URL.'profil.php?id='.$passager['id'].'" target="_blank">'.$passager['prenom'].' '.$passager['nom'].'</a></li>'; 
 		}
 		
@@ -25,7 +30,7 @@
 		}
 		
 		if($params['trajet']['conducteur'] != $_SESSION['UID']) {
-			if(!$params['trajet']['effectue'] && $params['trajet']['place'] > 0 && new DateTime($params['trajet']['depart']) < new DateTime()) {
+			if(!$deja_inscrit && !$params['trajet']['effectue'] && $params['trajet']['place'] > 0 && new DateTime($params['trajet']['depart']) > new DateTime()) {
 				echo '<p><a href="'.ROOT_URL.'action/reserver.php?id='.$params['trajet']['id'].'">Reserver sa place</a></p>';
 			}
 		}else if(!$params['trajet']['effectue']){

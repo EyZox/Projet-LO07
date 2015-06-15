@@ -53,6 +53,8 @@ if(!empty($_GET['id']) && is_numeric($_GET['id'])) {
 					sendMessage($_SESSION['UID'], $passager['passager'], 'Je suis désolé, mais je suis dans l\'obligation d\'annuler mon trajet. Vous avez été remboursé ', 'Trajet annulé', FALSE);
 				}
 			}
+			$stmt = $DB->prepare('DELETE FROM reservation WHERE trajet=?');
+			$stmt->execute(array($_GET['id']));
 		}
 	}
 			
