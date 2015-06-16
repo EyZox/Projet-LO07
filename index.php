@@ -1,34 +1,16 @@
 <?php 
     require_once __DIR__.'/utils/global.php';    
 	require_once ROOT.'security/auth_user.php';
+	require_once ROOT . 'utils/sql.php';
 	
-    build_template('empty.php', array('title' => 'Votre tableau de bord'));
-/*
-?>       
-        
-        <div id="globale">
-             <div id="entete">
-                 
-				<h1> Bonjour<?php #echo $_SESSION['prenom']; ?>, bienvenue sur votre session !</h1>
-	                 
-				<p class="sous-titre">
-					<strong><?php #$_SESSION['prenom']." ".$_SESSION['nom']; ?></strong> 
-				</p>
-			
-	    	</div>
-            
-             <?php include ROOT.'navigation/nav.html'; ?>
-            
-            <div id="contenu">
-                <p>
-                    Bienvenu sur votre tableau de bord ! 
-                 <?php #récuperer en requete SQL le solde pour le mettre dans la variable session ?>
-                <br/> Votre solde : <?php #echo $_SESSION['solde']; ?> 
-                </p>
-                
-	    	</div>
-     
-        </div>
-   <?php include ROOT.'footer.php';?>
-*/
-    ?>
+	$stmt = $DB->prepare('SELECT count(*) FROM trajet WHERE effectue=FALSE');
+	$stmt->execute();
+	$params['nb_trajet'] = $stmt->fetchColumn();
+	
+	$stmt = $DB->prepare('SELECT count(*) FROM trajet WHERE effectue=TRUE');
+	$stmt->execute();
+	$params['nb_trajet_total'] = $stmt->fetchColumn();
+	
+	$params['title'] = 'Votre tableau de bord';
+	
+    build_template('tableau_bord.php', $params);
