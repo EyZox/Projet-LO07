@@ -10,7 +10,7 @@
 				}
 				
 				if($i == 0) {
-					echo '<tr><td colspan="4" style="text-align:center;">Vous n\'avez posté aucune annonce</td></tr>';
+					echo '<tr><td colspan="4" style="text-align:center;">Aucun résultat ne correspond à votre requête</td></tr>';
 				}
 			?>
 		</table>
