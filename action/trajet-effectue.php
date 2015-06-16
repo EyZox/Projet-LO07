@@ -6,9 +6,9 @@ require_once ROOT . 'utils/sql.php';
 if(!empty($_GET['id']) && is_numeric($_GET['id'])) {
 	$DB->beginTransaction();
 	$error = true;
-	$stmt = $DB->prepare('UPDATE trajet SET effectue=1 WHERE id=? AND conducteur=? AND depart<?');
-	$currentDateTime = new DateTime();
-	if($stmt->execute(array($_GET['id'], $_SESSION['UID'], $currentDateTime->format('Y-m-d H:i').':00'))){
+	$stmt = $DB->prepare('UPDATE trajet SET effectue=1 WHERE id=? AND conducteur=? '/*.'AND depart<?'*/);
+	//$currentDateTime = new DateTime();
+	if($stmt->execute(array($_GET['id'], $_SESSION['UID']/*, $currentDateTime->format('Y-m-d H:i').':00'*/))){
 		if($stmt->rowCount()>0) {
 			/*CREDIT DU COMPTE*/
 			$stmt = $DB->prepare('SELECT count(*) as participants, trajet.prix FROM trajet INNER JOIN reservation ON trajet.id = reservation.trajet WHERE trajet.id=? GROUP BY trajet.prix');
